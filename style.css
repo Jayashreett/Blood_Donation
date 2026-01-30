@@ -1,0 +1,33 @@
+body{
+    font-family: Arial;
+    background:#f2f6fa;
+}
+
+form{
+    width:320px;
+    margin:80px auto;
+    padding:20px;
+    background:white;
+    border-radius:6px;
+}
+
+input,select,button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+}
+
+button{
+    background:#b30000;
+    color:white;
+    border:none;
+}
+
+h2{
+    text-align:center;
+    color:#b30000;
+}
+
+.center{
+    text-align:center;
+}
