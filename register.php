@@ -16,7 +16,7 @@
 <select name="blood_group" required>
     <option value="">Blood Group</option>
     <option>A+</option><option>A-</option>
-    <option>B+</option><option>B-</option>
+    <option>B+</option><option>B-</option>error
     <option>AB+</option><option>AB-</option>
     <option>O+</option><option>O-</option>
 </select>

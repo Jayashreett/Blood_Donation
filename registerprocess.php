@@ -1,19 +1,29 @@
 <?php
-include("db.php");   // ✅ correct path
+include "db.php";
 
-$user_id = $_POST['user_id'];
-$phone = $_POST['phone'];
-$blood_group = $_POST['blood_group'];
-$role = $_POST['role'];
-$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
+    die("Invalid access");
+}
 
-$query = "INSERT INTO users (user_id, phone, password, role, blood_group)
-VALUES ('$user_id', '$phone', '$password', '$role', '$blood_group')";
+$user_id = $_POST['user_id'] ?? '';
+$phone = $_POST['phone'] ?? '';
+$blood_group = $_POST['blood_group'] ?? '';
+$role = $_POST['role'] ?? '';
+$password = $_POST['password'] ?? '';
 
-if(mysqli_query($conn, $query)){
-    header("Location: login.php");   // ✅ same folder
+if ($user_id == '' || $phone == '' || $blood_group == '' || $role == '' || $password == '') {
+    die("All fields are required");
+}
+
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+$query = "INSERT INTO users (user_id, phone, blood_group, role, password)
+          VALUES ('$user_id', '$phone', '$blood_group', '$role', '$hashed_password')";
+
+if (mysqli_query($conn, $query)) {
+    header("Location: login.php");
     exit();
-}else{
-    echo "User already exists or DB error";
+} else {
+    echo "Database Error: " . mysqli_error($conn);
 }
 ?>
