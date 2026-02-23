@@ -21,9 +21,11 @@ $query = "INSERT INTO users (user_id, phone, blood_group, role, password)
           VALUES ('$user_id', '$phone', '$blood_group', '$role', '$hashed_password')";
 
 if (mysqli_query($conn, $query)) {
-    header("Location: login.php");
+    header("Location: login.php?success=1");
     exit();
-} else {
+}
+
+ else {
     echo "Database Error: " . mysqli_error($conn);
 }
 ?>
