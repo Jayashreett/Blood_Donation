@@ -66,7 +66,7 @@ button:hover{
 <div class="card">
 <h3>Your Role: Donor</h3>
 <p>Thank you for saving lives ❤️</p>
-<button onclick="alert('Feature Coming Soon')">View Donation Requests</button>
+<button onclick="alert('Feature Coming Soon')">Enter Your Details</button>
 </div>
 
 <br>

@@ -150,7 +150,7 @@ form button:hover{
         <form action="registerprocess.php" method="POST">
 
             <input type="text" name="user_id" placeholder="User ID" required>
-            <input type="text" name="phone" placeholder="Phone Number" required>
+            <!-- <input type="text" name="phone" placeholder="Phone Number" required>
 
             <select name="blood_group" required>
                 <option value="">Blood Group</option>
@@ -162,7 +162,7 @@ form button:hover{
                 <option>AB-</option>
                 <option>O+</option>
                 <option>O-</option>
-            </select>
+            </select> -->
 
             <select name="role" required>
                 <option value="">Role</option>
